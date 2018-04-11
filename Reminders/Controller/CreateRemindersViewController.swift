@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import  UserNotifications
+import UserNotifications
 
 class CreateRemindersViewController: UIViewController {
 
@@ -16,13 +16,13 @@ class CreateRemindersViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
-    
     @IBOutlet weak var reminderTypeLabel: UILabel!
     
     var dateTimePicker: UIDatePicker = UIDatePicker()
     var reminder:Reminders?
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         dateTimePicker.datePickerMode  = .dateAndTime
         self.reminderTime.inputView = dateTimePicker
@@ -37,6 +37,16 @@ class CreateRemindersViewController: UIViewController {
             self.deleteButton.isHidden = false
             self.saveButton.isHidden = true
             reminderTypeLabel.text = "Update / Delete Reminder"
+            
+            //set the date of the picker
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = DateFormats.DisplayDateFormat
+            dateFormatter.timeZone = TimeZone.current
+            let date = dateFormatter.date(from: self.reminderTime.text!)
+            print(date ?? "")
+            self.dateTimePicker.date = date!
+            
         }
         else
         {
@@ -47,11 +57,16 @@ class CreateRemindersViewController: UIViewController {
         }
     }
     
-    
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(CreateRemindersViewController.updateDate) , name: NSNotification.Name(rawValue: "DateSelected"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CreateRemindersViewController.updateDate) , name: NSNotification.Name(rawValue: NotificationConstants.DateSelected), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: NotificationConstants.DateSelected), object: nil)
     }
 
     @IBAction func closeButonAction(_ sender: UIButton)
@@ -61,25 +76,34 @@ class CreateRemindersViewController: UIViewController {
     
     @IBAction func updateReminders(_ sender: UIButton)
     {
-
-        //just save the reminder by updating the nsmanageedobject model
-        if let reminder = self.reminder
+        if (self.reminderText.text?.count == 0 || self.reminderTime.text?.count == 0)
         {
-            self.updateDate()
-
-            reminder.text = self.reminderText.text!
-            reminder.time = self.reminderTime.text!
-            //save it
-            do
-            {
-                try CoreDataHandler.getContext().save()
-            }
-            catch(let err)
-            {
-                print(err)
-            }
+            let alert =  UIAlertController(title: "Alert", message: "Please specify the name and time of reminder", preferredStyle: UIAlertControllerStyle.alert)
+            let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+            alert.addAction(action)
+            self.present(alert, animated: true)
         }
-        self.dismiss(animated: true)
+        else
+        {
+            //just save the reminder by updating the nsmanageedobject model
+            if let reminder = self.reminder
+            {
+                self.updateDate()
+                
+                reminder.text = self.reminderText.text!
+                reminder.time = self.reminderTime.text!
+                //save it
+                do
+                {
+                    try CoreDataHandler.getContext().save()
+                }
+                catch(let err)
+                {
+                    print(err)
+                }
+            }
+            self.dismiss(animated: true)
+        }
     }
     
     
@@ -88,13 +112,14 @@ class CreateRemindersViewController: UIViewController {
         let dateFromPicker = self.dateTimePicker.date
         let dateFormatter = DateFormatter()
         // change to a readable time format and change to local time zone
-        dateFormatter.dateFormat = "dd-MM-yy HH:mm"
+        dateFormatter.dateFormat = DateFormats.DisplayDateFormat
         dateFormatter.timeZone = TimeZone.current
         let timeStamp = dateFormatter.string(from: dateFromPicker)
         self.reminderTime.text = timeStamp
         //it may be update or new. If update you need to reschdeule the alarm as well.
         if self.reminder != nil
         {
+            //when a reminder is saved same identifier, previous reminder gets updated
             self.scheduleNotification(identifier: (self.reminder?.time!)!)
         }
     }
@@ -104,9 +129,7 @@ class CreateRemindersViewController: UIViewController {
     {
         if let reminder = self.reminder
         {
-            //this is an update to existing time. So you need to update the time of reminder!
             let identifier = reminder.time
-
             //remove the old notificaiton with identifier if it was pending
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier!])
          }
@@ -147,36 +170,31 @@ class CreateRemindersViewController: UIViewController {
 
     @IBAction func saveButtonAction(_ sender: UIButton)
     {
-        //update time
-        self.updateDate()
-        self.scheduleNotification(identifier: self.reminderTime.text!)
-        CoreDataHandler.saveReminder(remiderText: self.reminderText.text!, time: self.reminderTime.text!)
-        self.dismiss(animated: true)
-    }
-}
-
-
-
-extension Date {
-    func convertToLocalTime(fromTimeZone timeZoneAbbreviation: String) -> Date? {
-        if let timeZone = TimeZone(abbreviation: timeZoneAbbreviation) {
-            let targetOffset = TimeInterval(timeZone.secondsFromGMT(for: self))
-            let localOffeset = TimeInterval(TimeZone.autoupdatingCurrent.secondsFromGMT(for: self))
-            
-            return self.addingTimeInterval(targetOffset - localOffeset)
+        if (self.reminderText.text?.count == 0 || self.reminderTime.text?.count == 0)
+        {
+           let alert =  UIAlertController(title: "Alert", message: "Please specify the name and time of reminder", preferredStyle: UIAlertControllerStyle.alert)
+            let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+            alert.addAction(action)
+            self.present(alert, animated: true)
         }
-        
-        return nil
+        else
+        {
+            //update time
+            self.updateDate()
+            self.scheduleNotification(identifier: self.reminderTime.text!)
+            CoreDataHandler.saveReminder(remiderText: self.reminderText.text!, time: self.reminderTime.text!)
+            self.dismiss(animated: true)
+        }
     }
 }
+
 
 extension UITextField
 {
     @objc func doneButtonAction()
     {
-        //self.reminderTime.text = self.dateTimePicker.date.description
         //post a notification
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DateSelected"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationConstants.DateSelected), object: nil)
         self.resignFirstResponder()
     }
 }

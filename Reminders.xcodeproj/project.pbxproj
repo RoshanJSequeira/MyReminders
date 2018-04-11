@@ -19,6 +19,7 @@
 		012E1D56207D34B10047021D /* CreateRemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E1D55207D34B10047021D /* CreateRemindersViewController.swift */; };
 		012E1D58207D36270047021D /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E1D57207D36270047021D /* CoreDataHandler.swift */; };
 		012E1D5A207DAC950047021D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E1D59207DAC950047021D /* Utilities.swift */; };
+		01E91379207E5362001FE0B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E91378207E5362001FE0B0 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		012E1D55207D34B10047021D /* CreateRemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRemindersViewController.swift; sourceTree = "<group>"; };
 		012E1D57207D36270047021D /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		012E1D59207DAC950047021D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		01E91378207E5362001FE0B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		012E1D37207D2C7E0047021D /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				01E91377207E5353001FE0B0 /* Constants */,
 				01E91376207E462E001FE0B0 /* Utilities */,
 				01E91375207E461B001FE0B0 /* Handlers */,
 				01E91374207E45FD001FE0B0 /* Supporting Files */,
@@ -131,6 +134,14 @@
 				012E1D59207DAC950047021D /* Utilities.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		01E91377207E5353001FE0B0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				01E91378207E5362001FE0B0 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				012E1D56207D34B10047021D /* CreateRemindersViewController.swift in Sources */,
 				012E1D52207D34950047021D /* ReminderTableViewCell.swift in Sources */,
 				012E1D50207D30D20047021D /* Reminders+CoreDataProperties.swift in Sources */,
+				01E91379207E5362001FE0B0 /* Constants.swift in Sources */,
 				012E1D4F207D30D20047021D /* Reminders+CoreDataClass.swift in Sources */,
 				012E1D5A207DAC950047021D /* Utilities.swift in Sources */,
 				012E1D41207D2C7E0047021D /* Reminders.xcdatamodeld in Sources */,

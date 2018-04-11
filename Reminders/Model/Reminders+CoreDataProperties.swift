@@ -14,7 +14,7 @@ import CoreData
 extension Reminders {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Reminders> {
-        return NSFetchRequest<Reminders>(entityName: "Reminders")
+        return NSFetchRequest<Reminders>(entityName: CoreDataConstants.TableName)
     }
 
     @NSManaged public var text: String?

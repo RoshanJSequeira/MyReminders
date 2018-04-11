@@ -23,7 +23,7 @@ class CoreDataHandler: NSObject {
         
         //type 1 , use value for key
         let context = CoreDataHandler.getContext()
-        let entity = NSEntityDescription.entity(forEntityName: "Reminders", in: context)
+        let entity = NSEntityDescription.entity(forEntityName: CoreDataConstants.TableName, in: context)
         let note = Reminders(entity: entity!, insertInto: context)
         note.time = time 
         note.text = remiderText

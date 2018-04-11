@@ -13,17 +13,10 @@ class ReminderListViewController: UIViewController {
 
     
     @IBOutlet weak var addAReminderLabel: UILabel!
+    @IBOutlet weak var remindersTableView: UITableView!
+
     var reminderList = [Reminders]()
     
-    @IBOutlet weak var remindersTableView: UITableView!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
-    }
 
     func getAllReminders()
     {
@@ -47,20 +40,6 @@ class ReminderListViewController: UIViewController {
         super.viewWillAppear(animated)
         self.getAllReminders()
         
-        
-        //notifications
-        
-        UNUserNotificationCenter.current().getPendingNotificationRequests { (requests) in
-            for request in requests
-            {
-                print(request)
-            }
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -73,26 +52,27 @@ class ReminderListViewController: UIViewController {
 
 extension ReminderListViewController : UITableViewDataSource
 {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return self.reminderList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderTableViewCell") as! ReminderTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.ReminderTableViewCell) as! ReminderTableViewCell
         let reminder = self.reminderList[indexPath.row]
         cell.reminder = reminder
         return cell
-}
+    }
 }
 
 
 extension ReminderListViewController : UITableViewDelegate
 {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         let reminder = self.reminderList[indexPath.row]
-        
-        let createRemindersViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateRemindersViewController") as! CreateRemindersViewController
+        let createRemindersViewController = self.storyboard?.instantiateViewController(withIdentifier: ControllerIdentifier.CreateRemindersViewController) as! CreateRemindersViewController
         createRemindersViewController.reminder = reminder
         self.present(createRemindersViewController, animated: true)
         
