@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reminder List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ReminderListViewController" id="BYZ-38-t0r" customClass="ReminderListViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03G-pa-Or5">
+                                <rect key="frame" x="128.5" y="70" width="117" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a reminder by tapping the Add Button" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-GX-oUK">
+                                <rect key="frame" x="10" y="319.5" width="355" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="82a-v6-yls">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderTableViewCell" rowHeight="70" id="g7V-gn-AAp" customClass="ReminderTableViewCell" customModule="Reminders" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g7V-gn-AAp" id="Sqg-4A-fmR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nM0-qn-sSC">
+                                                    <rect key="frame" x="0.0" y="1" width="375" height="68"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAX-md-maa">
+                                                            <rect key="frame" x="20" y="13.5" width="335" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHF-M8-GSA">
+                                                            <rect key="frame" x="20" y="39.5" width="335" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="wHF-M8-GSA" firstAttribute="trailing" secondItem="gAX-md-maa" secondAttribute="trailing" id="9c7-2o-Rh9"/>
+                                                        <constraint firstItem="gAX-md-maa" firstAttribute="centerY" secondItem="nM0-qn-sSC" secondAttribute="centerY" constant="-10" id="HX1-uH-22v"/>
+                                                        <constraint firstItem="wHF-M8-GSA" firstAttribute="leading" secondItem="gAX-md-maa" secondAttribute="leading" id="cif-h6-KHm"/>
+                                                        <constraint firstItem="gAX-md-maa" firstAttribute="leading" secondItem="nM0-qn-sSC" secondAttribute="leading" constant="20" id="e1L-lD-iXH"/>
+                                                        <constraint firstItem="wHF-M8-GSA" firstAttribute="top" secondItem="gAX-md-maa" secondAttribute="bottom" constant="5" id="t8y-Zc-dCI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="gAX-md-maa" secondAttribute="trailing" constant="20" id="uXa-ye-W3g"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="nM0-qn-sSC" secondAttribute="trailing" id="7DV-fi-YKq"/>
+                                                <constraint firstItem="nM0-qn-sSC" firstAttribute="leading" secondItem="Sqg-4A-fmR" secondAttribute="leading" id="EuZ-Ar-1Tf"/>
+                                                <constraint firstAttribute="bottom" secondItem="nM0-qn-sSC" secondAttribute="bottom" constant="1" id="elO-Yt-76f"/>
+                                                <constraint firstItem="nM0-qn-sSC" firstAttribute="top" secondItem="Sqg-4A-fmR" secondAttribute="top" constant="1" id="yMd-b1-NcO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="reminderTextLabel" destination="gAX-md-maa" id="ywo-n9-FY7"/>
+                                            <outlet property="reminderTimeLabel" destination="wHF-M8-GSA" id="mb7-aq-9xi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="wmJ-es-Sot"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xge-lA-ERv"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUM-xB-4gH">
+                                <rect key="frame" x="295" y="61" width="60" height="40"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Ntm-pT-scf"/>
+                                    <constraint firstAttribute="height" constant="40" id="WcA-fe-8y8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ijA-vO-UMX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.63016185170000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="03G-pa-Or5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6PD-kp-Br9"/>
+                            <constraint firstItem="aTd-GX-oUK" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6SO-ej-HcA"/>
+                            <constraint firstItem="aTd-GX-oUK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="7cf-xV-yN4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pUM-xB-4gH" secondAttribute="trailing" constant="20" id="ZXU-Vb-ccH"/>
+                            <constraint firstItem="pUM-xB-4gH" firstAttribute="centerY" secondItem="03G-pa-Or5" secondAttribute="centerY" id="Zlb-b0-BnN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="82a-v6-yls" secondAttribute="trailing" id="gNl-no-JKn"/>
+                            <constraint firstItem="03G-pa-Or5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="gbw-DJ-NEH"/>
+                            <constraint firstItem="82a-v6-yls" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jRO-eh-SDx"/>
+                            <constraint firstItem="82a-v6-yls" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m3j-iW-tuG"/>
+                            <constraint firstItem="82a-v6-yls" firstAttribute="top" secondItem="03G-pa-Or5" secondAttribute="bottom" constant="29.5" id="sS6-dG-Mdx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aTd-GX-oUK" secondAttribute="trailing" constant="10" id="uph-ls-C3G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addAReminderLabel" destination="aTd-GX-oUK" id="poG-Xa-efB"/>
+                        <outlet property="remindersTableView" destination="82a-v6-yls" id="WJd-sz-IYF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.200000000000003" y="141.67916041979012"/>
+        </scene>
+        <!--Create Reminders View Controller-->
+        <scene sceneID="nJs-Z9-1Ix">
+            <objects>
+                <viewController storyboardIdentifier="CreateRemindersViewController" id="zrV-J1-fp7" customClass="CreateRemindersViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bhn-6h-M6g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Reminder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-4T-p5Y">
+                                <rect key="frame" x="119" y="70" width="138" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="j5y-Vh-2Kb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PQT-Su-fon">
+                                <rect key="frame" x="20" y="152" width="335" height="90"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="g40-vP-eNd">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What to remind?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HT1-Va-JVf">
+                                                <rect key="frame" x="0.0" y="4.5" width="167.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qt7-Oh-6Vp">
+                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vXA-LT-0EA">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trr-oc-Z1D">
+                                                <rect key="frame" x="0.0" y="4.5" width="167.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zlx-4v-phF">
+                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KN8-Qb-FtX">
+                                <rect key="frame" x="137" y="287" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Piz-ZZ-jsx"/>
+                                    <constraint firstAttribute="width" constant="100" id="j7t-jU-eoe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="zrV-J1-fp7" eventType="touchUpInside" id="26F-jZ-rhL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9r-kb-hnp">
+                                <rect key="frame" x="16" y="287" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2ko-iM-gwI"/>
+                                    <constraint firstAttribute="width" constant="100" id="YcK-yM-4xh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateReminders:" destination="zrV-J1-fp7" eventType="touchUpInside" id="CAh-aA-VCN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id7-CB-Kgv">
+                                <rect key="frame" x="259" y="287" width="100" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.092869963399396127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CHu-gK-YiS"/>
+                                    <constraint firstAttribute="width" constant="100" id="Fcn-o5-zLb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonAction:" destination="zrV-J1-fp7" eventType="touchUpInside" id="kuJ-XJ-BrR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blF-cz-ada">
+                                <rect key="frame" x="266" y="60.5" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Uni-iB-JhP"/>
+                                    <constraint firstAttribute="width" constant="100" id="WJo-Cc-oo1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButonAction:" destination="zrV-J1-fp7" eventType="touchUpInside" id="Bcl-DA-8I5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.63016185170000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sBC-4T-p5Y" firstAttribute="top" secondItem="bLQ-sp-azI" secondAttribute="top" constant="50" id="1Id-bP-DW6"/>
+                            <constraint firstItem="bLQ-sp-azI" firstAttribute="trailing" secondItem="PQT-Su-fon" secondAttribute="trailing" constant="20" id="4Je-Bq-san"/>
+                            <constraint firstItem="Id7-CB-Kgv" firstAttribute="centerY" secondItem="KN8-Qb-FtX" secondAttribute="centerY" id="7gz-ih-RBY"/>
+                            <constraint firstItem="blF-cz-ada" firstAttribute="centerY" secondItem="sBC-4T-p5Y" secondAttribute="centerY" id="BPf-Bm-4ti"/>
+                            <constraint firstItem="PQT-Su-fon" firstAttribute="top" secondItem="sBC-4T-p5Y" secondAttribute="bottom" constant="61.5" id="T3z-46-Ijy"/>
+                            <constraint firstItem="bLQ-sp-azI" firstAttribute="trailing" secondItem="Id7-CB-Kgv" secondAttribute="trailing" constant="16" id="Vlo-kY-Nw6"/>
+                            <constraint firstItem="KN8-Qb-FtX" firstAttribute="centerY" secondItem="c9r-kb-hnp" secondAttribute="centerY" id="Y8E-RL-QDr"/>
+                            <constraint firstItem="PQT-Su-fon" firstAttribute="leading" secondItem="bLQ-sp-azI" secondAttribute="leading" constant="20" id="ZS3-fU-XfT"/>
+                            <constraint firstItem="KN8-Qb-FtX" firstAttribute="centerX" secondItem="PQT-Su-fon" secondAttribute="centerX" id="j0S-bx-0Tt"/>
+                            <constraint firstItem="sBC-4T-p5Y" firstAttribute="centerX" secondItem="bLQ-sp-azI" secondAttribute="centerX" id="jT0-C4-h1g"/>
+                            <constraint firstItem="KN8-Qb-FtX" firstAttribute="top" secondItem="PQT-Su-fon" secondAttribute="bottom" constant="45" id="qId-yO-phZ"/>
+                            <constraint firstItem="bLQ-sp-azI" firstAttribute="trailing" secondItem="blF-cz-ada" secondAttribute="trailing" constant="9" id="toY-dZ-2zG"/>
+                            <constraint firstItem="c9r-kb-hnp" firstAttribute="leading" secondItem="bLQ-sp-azI" secondAttribute="leading" constant="16" id="xLb-ow-x5O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bLQ-sp-azI"/>
+                    </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="Id7-CB-Kgv" id="r2t-1d-SM1"/>
+                        <outlet property="reminderText" destination="Qt7-Oh-6Vp" id="Kit-tf-jiH"/>
+                        <outlet property="reminderTime" destination="Zlx-4v-phF" id="nBE-Xg-6AP"/>
+                        <outlet property="reminderTypeLabel" destination="sBC-4T-p5Y" id="xCq-wh-6mW"/>
+                        <outlet property="saveButton" destination="KN8-Qb-FtX" id="mw4-Rs-Pgf"/>
+                        <outlet property="updateButton" destination="c9r-kb-hnp" id="5y4-Vq-6jw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NqJ-wD-ZS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="142"/>
+        </scene>
+    </scenes>
+</document>
