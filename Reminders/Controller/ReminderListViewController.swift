@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class ReminderListViewController: UIViewController {
+class ReminderListViewController: ReminderBaseViewController {
 
     
     @IBOutlet weak var addAReminderLabel: UILabel!
@@ -45,7 +45,7 @@ class ReminderListViewController: UIViewController {
 
     @IBAction func addButtonAction(_ sender: UIButton)
     {
-        let createRemindersViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateRemindersViewController") as! CreateRemindersViewController
+        let createRemindersViewController = self.storyboard?.instantiateViewController(withIdentifier: ControllerIdentifier.CreateRemindersViewController ) as! CreateRemindersViewController
         self.present(createRemindersViewController, animated: true)
     }
 }

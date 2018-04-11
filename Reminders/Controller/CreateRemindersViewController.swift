@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class CreateRemindersViewController: UIViewController {
+class CreateRemindersViewController: ReminderBaseViewController {
 
     @IBOutlet weak var reminderTime: UITextField!
     @IBOutlet weak var reminderText: UITextField!

@@ -20,6 +20,7 @@
 		012E1D58207D36270047021D /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E1D57207D36270047021D /* CoreDataHandler.swift */; };
 		012E1D5A207DAC950047021D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E1D59207DAC950047021D /* Utilities.swift */; };
 		01E91379207E5362001FE0B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E91378207E5362001FE0B0 /* Constants.swift */; };
+		01E9137C207E76BB001FE0B0 /* ReminderBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9137B207E76BB001FE0B0 /* ReminderBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		012E1D57207D36270047021D /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		012E1D59207DAC950047021D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		01E91378207E5362001FE0B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		01E9137B207E76BB001FE0B0 /* ReminderBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		012E1D37207D2C7E0047021D /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				01E9137A207E76A2001FE0B0 /* Base Classes */,
 				01E91377207E5353001FE0B0 /* Constants */,
 				01E91376207E462E001FE0B0 /* Utilities */,
 				01E91375207E461B001FE0B0 /* Handlers */,
@@ -142,6 +145,14 @@
 				01E91378207E5362001FE0B0 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		01E9137A207E76A2001FE0B0 /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				01E9137B207E76BB001FE0B0 /* ReminderBaseViewController.swift */,
+			);
+			path = "Base Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 				01E91379207E5362001FE0B0 /* Constants.swift in Sources */,
 				012E1D4F207D30D20047021D /* Reminders+CoreDataClass.swift in Sources */,
 				012E1D5A207DAC950047021D /* Utilities.swift in Sources */,
+				01E9137C207E76BB001FE0B0 /* ReminderBaseViewController.swift in Sources */,
 				012E1D41207D2C7E0047021D /* Reminders.xcdatamodeld in Sources */,
 				012E1D39207D2C7E0047021D /* AppDelegate.swift in Sources */,
 			);
